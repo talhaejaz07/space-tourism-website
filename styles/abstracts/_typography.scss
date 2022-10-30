@@ -1,6 +1,10 @@
 @use "./colors" as *;
 @use "./breakpoints" as *;
 
+$primary-font: "Bellefair", serif;
+$secondary-font: "Barlow Condensed", sans-serif;
+$body-font: "Barlow", sans-serif;
+
 $heading01-desktop-font-size: 150px;
 $heading01-mobile-font-size: 80px;
 
@@ -12,8 +16,36 @@ $heading03-desktop-font-size: 56px;
 $heading03-tablet-font-size: 40px;
 $heading03-mobile-font-size: 24px;
 
+$heading04-desktop-font-size: 32px;
+$heading04-tablet-font-size: 24px;
+$heading04-mobile-font-size: 16px;
+
+$heading05-desktop-font-size: 28px;
+$heading05-tablet-font-size: 20px;
+$heading05-mobile-font-size: 16px;
+$heading05-desktop-letter-spacing: 4.725px;
+$heading05-tablet-letter-spacing: 3.375px;
+$heading05-mobile-letter-spacing: 2.7px;
+
+$subheading01-desktop-font-size: 28px;
+
+$subheading02-desktop-font-size: 14px;
+$subheading02-desktop-letter-spacing: 2.36px;
+
+$nav-txt-desktop-font-size: 16px;
+$nav-txt-tablet-font-size: 14px;
+$nav-txt-mobile-font-size: 16px;
+$nav-txt-desktop-letter-spacing: 2.7px;
+$nav-txt-tablet-letter-spacing: 2.36px;
+$nav-txt-mobile-letter-spacing: 2.7px;
+
+$body-txt-desktop-font-size: 18px;
+$body-txt-tablet-font-size: 16px;
+$body-txt-mobile-font-size: 15px;
+
 @mixin heading01 {
   color: $light-clr;
+  font-family: $primary-font;
   font-size: $heading01-desktop-font-size;
   @include for-phone-only {
     font-size: $heading01-mobile-font-size;
@@ -23,6 +55,7 @@ $heading03-mobile-font-size: 24px;
 
 @mixin heading02 {
   color: $light-clr;
+  font-family: $primary-font;
   font-size: $heading02-desktop-font-size;
   @include for-tablet-and-down {
     font-size: $heading02-tablet-font-size;
@@ -35,6 +68,7 @@ $heading03-mobile-font-size: 24px;
 
 @mixin heading03 {
   color: $light-clr;
+  font-family: $primary-font;
   font-size: $heading03-desktop-font-size;
   @include for-tablet-and-down {
     font-size: $heading03-tablet-font-size;
@@ -43,4 +77,81 @@ $heading03-mobile-font-size: 24px;
     font-size: $heading03-mobile-font-size;
   }
   font-weight: 400;
+}
+
+@mixin heading04($heading04-opacity: 0.5) {
+  color: $light-clr;
+  font-family: $primary-font;
+  font-size: $heading04-desktop-font-size;
+  @include for-tablet-and-down {
+    font-size: $heading04-tablet-font-size;
+  }
+  @include for-phone-only {
+    font-size: $heading04-mobile-font-size;
+  }
+  font-weight: 400;
+  opacity: $heading04-opacity;
+}
+
+@mixin heading05 {
+  color: $accent-clr;
+  font-family: $secondary-font;
+  font-size: $heading05-desktop-font-size;
+  letter-spacing: $heading05-desktop-letter-spacing;
+  @include for-tablet-and-down {
+    font-size: $heading05-tablet-font-size;
+    letter-spacing: $heading05-tablet-letter-spacing;
+  }
+  @include for-phone-only {
+    font-size: $heading05-mobile-font-size;
+    letter-spacing: $heading05-mobile-letter-spacing;
+  }
+  font-weight: 400;
+}
+
+@mixin subheading01 {
+  color: $light-clr;
+  font-family: $primary-font;
+  font-size: $subheading01-desktop-font-size;
+  font-weight: 400;
+}
+
+@mixin subheading02 {
+  color: $accent-clr;
+  font-family: $secondary-font;
+  font-size: $subheading02-desktop-font-size;
+  letter-spacing: $subheading02-desktop-letter-spacing;
+  font-weight: 400;
+}
+
+@mixin nav-txt {
+  color: $light-clr;
+  font-family: $primary-font;
+  font-size: $nav-txt-desktop-font-size;
+  letter-spacing: $nav-txt-desktop-letter-spacing;
+  @include for-tablet-and-down {
+    font-size: $nav-txt-tablet-font-size;
+    letter-spacing: $nav-txt-tablet-letter-spacing;
+  }
+  @include for-phone-only {
+    font-size: $nav-txt-mobile-font-size;
+    letter-spacing: $nav-txt-mobile-letter-spacing;
+  }
+  font-weight: 400;
+}
+
+@mixin body-txt {
+  color: $accent-clr;
+  font-family: $body-font;
+  font-size: $body-txt-desktop-font-size;
+  @include for-tablet-and-down {
+    font-size: $body-txt-tablet-font-size;
+    text-align: center;
+  }
+  @include for-phone-only {
+    font-size: $body-txt-mobile-font-size;
+    text-align: center;
+  }
+  font-weight: 400;
+  line-height: 1.75;
 }
