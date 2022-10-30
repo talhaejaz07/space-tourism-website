@@ -1,0 +1,46 @@
+@use "./colors" as *;
+@use "./breakpoints" as *;
+
+$heading01-desktop-font-size: 150px;
+$heading01-mobile-font-size: 80px;
+
+$heading02-desktop-font-size: 100px;
+$heading02-tablet-font-size: 80px;
+$heading02-mobile-font-size: 56px;
+
+$heading03-desktop-font-size: 56px;
+$heading03-tablet-font-size: 40px;
+$heading03-mobile-font-size: 24px;
+
+@mixin heading01 {
+  color: $light-clr;
+  font-size: $heading01-desktop-font-size;
+  @include for-phone-only {
+    font-size: $heading01-mobile-font-size;
+  }
+  font-weight: 400;
+}
+
+@mixin heading02 {
+  color: $light-clr;
+  font-size: $heading02-desktop-font-size;
+  @include for-tablet-and-down {
+    font-size: $heading02-tablet-font-size;
+  }
+  @include for-phone-only {
+    font-size: $heading02-mobile-font-size;
+  }
+  font-weight: 400;
+}
+
+@mixin heading03 {
+  color: $light-clr;
+  font-size: $heading03-desktop-font-size;
+  @include for-tablet-and-down {
+    font-size: $heading03-tablet-font-size;
+  }
+  @include for-phone-only {
+    font-size: $heading03-mobile-font-size;
+  }
+  font-weight: 400;
+}

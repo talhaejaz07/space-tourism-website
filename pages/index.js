@@ -1,13 +1,14 @@
-import { HeadComponents } from "../components";
+import { HeadComponent } from "../components";
+import styles from "./Home.module.scss";
 
 export default function Home() {
   return (
     <>
-      <HeadComponents
+      <HeadComponent
         title="Space Tourism Website"
         description="A practice website for portfolio"
       />
-      <h1>Hello World!!!</h1>
+      <p className={styles.heading}>Hello Eshu</p>
     </>
   );
 }

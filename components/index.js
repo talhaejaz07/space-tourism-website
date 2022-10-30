@@ -1,1 +1,1 @@
-export * from "./HeadComponents.jsx";
+export * from "./HeadComponent.jsx";

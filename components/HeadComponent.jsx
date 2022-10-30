@@ -2,7 +2,7 @@ import React from "react";
 import Head from "next/head";
 import Favicon from "../assets/favicon.svg";
 
-export const HeadComponents = (props) => {
+export const HeadComponent = (props) => {
   return (
     <Head>
       <title>{props.title}</title>
