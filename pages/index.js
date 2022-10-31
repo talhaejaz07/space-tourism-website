@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <>
       <HeadComponent
-        title="Space Tourism Website"
+        title="Space Tourism | Homes"
         description="A practice website for portfolio"
       />
       <main className={styles.container}>
@@ -18,7 +18,11 @@ export default function Home() {
           <source srcSet={BGImageMobile.src} media="(max-width: 480px)" />
           <source srcSet={BGImageTablet.src} media="(max-width: 800px)" />
           <source srcSet={BGImageDesktop.src} media="(min-width: 801px)" />
-          <img src={BGImageDesktop.src} alt="Background" />
+          <img
+            className={styles.image}
+            src={BGImageDesktop.src}
+            alt="Background"
+          />
         </picture>
       </main>
     </>

@@ -126,7 +126,7 @@ $body-txt-mobile-font-size: 15px;
 
 @mixin nav-txt {
   color: $light-clr;
-  font-family: $primary-font;
+  font-family: $secondary-font;
   font-size: $nav-txt-desktop-font-size;
   letter-spacing: $nav-txt-desktop-letter-spacing;
   @include for-tablet-and-down {
