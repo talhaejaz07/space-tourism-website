@@ -15,9 +15,9 @@ const crew = () => {
         description="A practice website for portfolio"
       />
       <picture>
-        <source srcSet={BGImageMobile.src} media="(max-width: 480px)" />
-        <source srcSet={BGImageTablet.src} media="(max-width: 800px)" />
-        <source srcSet={BGImageDesktop.src} media="(min-width: 801px)" />
+        <source srcSet={BGImageMobile.src} media="(max-width: 550px)" />
+        <source srcSet={BGImageTablet.src} media="(max-width: 850px)" />
+        <source srcSet={BGImageDesktop.src} media="(min-width: 851px)" />
         <img
           className={styles.backgroundImage}
           src={BGImageDesktop.src}

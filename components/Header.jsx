@@ -1,12 +1,14 @@
-import React from "react";
-import Image from "next/image";
+import React, { useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
 import styles from "../styles/componentStyles/Header.module.scss";
-import Logo from "../assets/favicon.svg";
+import Logo from "../assets/svg-icons/logo.svg";
+import BurgerIcon from "../assets/svg-icons/burger.svg";
+import CloseIcon from "../assets/svg-icons/close.svg";
 
 export const Header = () => {
+  // Logic for active link marker
   const router = useRouter();
   let homeLink = "false";
   let destinationLink = "false";
@@ -41,35 +43,52 @@ export const Header = () => {
     technologyLink = "true";
   }
 
+  // Logic for mobile menu Open/Close
+  const [click, setClick] = useState(false);
+
   return (
     <header className={styles.header}>
-      <Image
-        className={styles.logo}
-        src={Logo}
-        height={48}
-        width={48}
-        alt="Logo"
+      <div>
+        <Link href="/">
+          <img className={styles.logo} src={Logo.src} alt="Logo" />
+        </Link>
+      </div>
+
+      <div className={styles.menuIcons}></div>
+      <img
+        onClick={() => setClick(!click)}
+        className={styles.burgerIcon}
+        src={BurgerIcon.src}
+        alt="Burger Icon"
+        data-click={click ? "true" : "false"}
       />
-      <nav>
+      <img
+        onClick={() => setClick(!click)}
+        className={styles.closeIcon}
+        src={CloseIcon.src}
+        alt="Close Icon"
+        data-click={click ? "false" : "true"}
+      />
+      <nav data-click={click}>
         <ul>
           <li data-active-link={homeLink}>
-            <Link href="/">
-              <span>00</span> HOME
+            <Link href="/" onClick={() => setClick(!click)}>
+              <span>00 </span>HOME
             </Link>
           </li>
           <li data-active-link={destinationLink}>
-            <Link href="/destination">
-              <span>01</span> DESTINATION
+            <Link href="/destination" onClick={() => setClick(!click)}>
+              <span>01 </span>DESTINATION
             </Link>
           </li>
           <li data-active-link={crewLink}>
-            <Link href="/crew">
-              <span>02</span> CREW
+            <Link href="/crew" onClick={() => setClick(!click)}>
+              <span>02 </span>CREW
             </Link>
           </li>
           <li data-active-link={technologyLink}>
-            <Link href="/technology">
-              <span>03</span> TECHNOLOGY
+            <Link href="/technology" onClick={() => setClick(!click)}>
+              <span>03 </span>TECHNOLOGY
             </Link>
           </li>
         </ul>

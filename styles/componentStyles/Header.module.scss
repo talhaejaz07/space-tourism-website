@@ -12,8 +12,40 @@
   align-items: center;
   grid-template-columns: 1fr 1fr;
 
+  @include for-tablet-and-down {
+    top: 0;
+  }
+
   .logo {
     margin-left: 15px;
+    height: 48px;
+    width: 48px;
+
+    @include for-tablet-and-down {
+      margin-left: 39px;
+    }
+  }
+
+  .menuIcons,
+  .burgerIcon,
+  .closeIcon {
+    display: none;
+
+    @include for-phone-only {
+      display: block;
+      position: absolute;
+      z-index: 4;
+      right: 6.5%;
+      height: 24px;
+      width: 24px;
+    }
+  }
+
+  .burgerIcon[data-click="true"],
+  .closeIcon[data-click="true"] {
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 100ms;
   }
 
   nav {
@@ -21,6 +53,36 @@
     width: min(830px + (100vw - 1440px) / 2, 100vw * 830px / 1440px);
     background-color: rgba(white, 0.04);
     backdrop-filter: blur(42px);
+
+    @include for-tablet-and-down {
+      width: calc((450 / 768) * 100vw);
+    }
+
+    @include for-phone-only {
+      position: absolute;
+      z-index: 3;
+      top: 0;
+      right: 0;
+      height: 100vh;
+      width: calc((254 / 375) * 100vw);
+      transform: scaleX(0);
+      transform-origin: right;
+      transition-property: transform;
+      transition-duration: 100ms;
+    }
+  }
+
+  nav[data-click="true"] {
+    transform: scaleX(1);
+    transform-origin: right;
+    transition-property: transform;
+    transition-duration: 100ms;
+
+    li {
+      opacity: 1;
+      transition-property: opacity;
+      transition-duration: 100ms;
+    }
   }
 
   ul {
@@ -30,6 +92,21 @@
     justify-content: space-between;
     margin-right: 16px;
     margin-left: min(123px, 100vw * 0.085);
+
+    @include for-tablet-and-down {
+      max-width: none;
+      margin-right: 10.5%;
+      margin-left: 10.5%;
+    }
+
+    @include for-phone-only {
+      flex-direction: column;
+      margin-left: calc(12.6%);
+      margin-right: 0;
+      padding-top: 17.5vh;
+      justify-content: normal;
+      gap: 51px;
+    }
   }
 
   li {
@@ -38,6 +115,13 @@
     height: 100%;
     display: flex;
     align-items: center;
+
+    @include for-phone-only {
+      height: 31px;
+      opacity: 0;
+      transition-property: opacity;
+      transition-duration: 100ms;
+    }
 
     &::after {
       position: absolute;
@@ -49,6 +133,12 @@
       opacity: 0;
       transition-property: opacity;
       transition-duration: 250ms;
+
+      @include for-phone-only {
+        height: 100%;
+        width: 3px;
+        right: 0;
+      }
     }
 
     &:hover::after {
@@ -70,5 +160,13 @@
 
   span {
     font-weight: bold;
+
+    @include for-tablet-and-down {
+      display: none;
+    }
+
+    @include for-phone-only {
+      display: inline;
+    }
   }
 }

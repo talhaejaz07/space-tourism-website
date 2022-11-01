@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import Favicon from "../assets/favicon.svg";
+import Favicon from "../assets/svg-icons/favicon.svg";
 
 export const HeadComponent = (props) => {
   return (
