@@ -1,6 +1,12 @@
 import React from "react";
 import { HeadComponent } from "../components";
 
+import BGImageDesktop from "../assets/background-images/destination/bg-image-desktop.webp";
+import BGImageTablet from "../assets/background-images/destination/bg-image-tablet.webp";
+import BGImageMobile from "../assets/background-images/destination/bg-image-mobile.webp";
+
+import styles from "../styles/pagesStyles/Destination.module.scss";
+
 const destination = () => {
   return (
     <>
@@ -8,7 +14,17 @@ const destination = () => {
         title="Space Tourism | Destination"
         description="A practice website for portfolio"
       />
-      destination
+      <picture>
+        <source srcSet={BGImageMobile.src} media="(max-width: 480px)" />
+        <source srcSet={BGImageTablet.src} media="(max-width: 800px)" />
+        <source srcSet={BGImageDesktop.src} media="(min-width: 801px)" />
+        <img
+          className={styles.backgroundImage}
+          src={BGImageDesktop.src}
+          alt="Background"
+        />
+      </picture>
+      <main className={styles.container}></main>
     </>
   );
 };

@@ -43,7 +43,13 @@ export const Header = () => {
 
   return (
     <header className={styles.header}>
-      <Image src={Logo} height={48} width={48} alt="Logo" />
+      <Image
+        className={styles.logo}
+        src={Logo}
+        height={48}
+        width={48}
+        alt="Logo"
+      />
       <nav>
         <ul>
           <li data-active-link={homeLink}>
