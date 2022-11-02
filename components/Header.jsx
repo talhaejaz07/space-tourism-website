@@ -48,27 +48,28 @@ export const Header = () => {
 
   return (
     <header className={styles.header}>
-      <div>
-        <Link href="/" onClick={() => setClick(!click)}>
+      <div className={styles.logoWrapper}>
+        <Link href="/" onClick={() => setClick(false)}>
           <img className={styles.logo} src={Logo.src} alt="Logo" />
         </Link>
       </div>
 
-      <div className={styles.menuIcons}></div>
-      <img
-        onClick={() => setClick(!click)}
-        className={styles.burgerIcon}
-        src={BurgerIcon.src}
-        alt="Burger Icon"
-        data-click={click ? "true" : "false"}
-      />
-      <img
-        onClick={() => setClick(!click)}
-        className={styles.closeIcon}
-        src={CloseIcon.src}
-        alt="Close Icon"
-        data-click={click ? "false" : "true"}
-      />
+      <div className={styles.menuIcons}>
+        <img
+          onClick={() => setClick(!click)}
+          className={styles.burgerIcon}
+          src={BurgerIcon.src}
+          alt="Burger Icon"
+          data-click={click ? "true" : "false"}
+        />
+        <img
+          onClick={() => setClick(!click)}
+          className={styles.closeIcon}
+          src={CloseIcon.src}
+          alt="Close Icon"
+          data-click={click ? "false" : "true"}
+        />
+      </div>
       <nav data-click={click}>
         <ul>
           <li data-active-link={homeLink}>

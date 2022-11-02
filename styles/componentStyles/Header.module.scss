@@ -16,14 +16,17 @@
     top: 0;
   }
 
-  .logo {
+  .logoWrapper {
     margin-left: 15px;
-    height: 48px;
-    width: 48px;
 
     @include for-tablet-and-down {
       margin-left: 39px;
     }
+  }
+
+  .logo {
+    height: 48px;
+    width: 48px;
   }
 
   .menuIcons,
