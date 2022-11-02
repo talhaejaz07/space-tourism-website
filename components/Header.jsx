@@ -49,7 +49,7 @@ export const Header = () => {
   return (
     <header className={styles.header}>
       <div>
-        <Link href="/">
+        <Link href="/" onClick={() => setClick(!click)}>
           <img className={styles.logo} src={Logo.src} alt="Logo" />
         </Link>
       </div>
