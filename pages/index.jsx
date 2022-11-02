@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import { HeadComponent } from "../components";
 
 import BGImageDesktop from "../assets/background-images/index/bg-image-desktop.webp";
@@ -23,7 +25,25 @@ export default function Home() {
           alt="Background"
         />
       </picture>
-      <main className={styles.container}></main>
+      <main className={styles.container}>
+        <div className={styles.description}>
+          <div className={styles.descriptionWrapper}>
+            <h5>SO, YOU WANT TO TRAVEL TO</h5>
+            <h1>SPACE</h1>
+            <p>
+              Let’s face it; if you want to go to space, you might as well
+              genuinely go to outer space and not hover kind of on the edge of
+              it. Well sit back, and relax because we’ll give you a truly out of
+              this world experience!
+            </p>
+          </div>
+        </div>
+        <div className={styles.buttonWrapper}>
+          <Link href="/destination">
+            <button>EXPLORE</button>
+          </Link>
+        </div>
+      </main>
     </>
   );
 }
