@@ -1,11 +1,5 @@
 @use "../abstracts/" as *;
 
-.backgroundImage {
-  position: fixed;
-  width: 100vw;
-  height: 100vh;
-}
-
 .container {
   position: relative;
   z-index: 2;
@@ -33,9 +27,23 @@
       justify-content: center;
       margin-top: 140px;
     }
+
+    @include for-tablet-and-down {
+      margin-top: max(20vh, 140px);
+    }
+
+    @include for-phone-only {
+      margin-top: max(16.8vh, 112px);
+    }
   }
 
   .descriptionWrapper {
+    max-width: 450px;
+
+    @include for-phone-only {
+      max-width: calc(100vw - 48px);
+    }
+
     margin-right: 14.5%;
     margin-bottom: 14.5%;
     display: flex;
@@ -51,17 +59,14 @@
 
   h5 {
     @include heading05();
-    max-width: 450px;
   }
 
   h1 {
     @include heading01();
-    max-width: 450px;
   }
 
   p {
     @include body-txt();
-    max-width: 450px;
   }
 
   .buttonWrapper {
@@ -71,6 +76,10 @@
     @media (max-width: 1075px) {
       display: block;
       margin-top: 32px;
+    }
+
+    @include for-tablet-and-down {
+      margin-top: max(12.5vh, 32px);
     }
   }
 

@@ -20,7 +20,7 @@ export default function Home() {
         <source srcSet={BGImageTablet.src} media="(max-width: 850px)" />
         <source srcSet={BGImageDesktop.src} media="(min-width: 851px)" />
         <img
-          className={styles.backgroundImage}
+          className="backgroundImage"
           src={BGImageDesktop.src}
           alt="Background"
         />

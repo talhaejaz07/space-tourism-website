@@ -11,3 +11,9 @@
 body {
   background-color: $dark-clr;
 }
+
+.backgroundImage {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+}
