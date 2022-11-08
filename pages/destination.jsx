@@ -1,9 +1,13 @@
 import React from "react";
+import Image from "next/image";
+
 import { HeadComponent } from "../components";
 
 import BGImageDesktop from "../assets/background-images/destination/bg-image-desktop.webp";
 import BGImageTablet from "../assets/background-images/destination/bg-image-tablet.webp";
 import BGImageMobile from "../assets/background-images/destination/bg-image-mobile.webp";
+
+import Moon from "../assets/destination-pictures/moon.webp";
 
 import styles from "../styles/pagesStyles/Destination.module.scss";
 
@@ -24,7 +28,15 @@ const destination = () => {
           alt="Background"
         />
       </picture>
-      <main className={styles.container}></main>
+      <main className={styles.container}>
+        <div className={styles.destination}>
+          <h5>
+            <span>01 </span>Pick your destination
+          </h5>
+          <Image src={Moon} />
+        </div>
+        <div className={styles.description}></div>
+      </main>
     </>
   );
 };
