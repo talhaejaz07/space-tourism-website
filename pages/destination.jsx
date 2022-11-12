@@ -1,9 +1,9 @@
 import React from "react";
-import Image from "next/image";
 
 import {
   HeadComponent,
   PageMessage,
+  DestinationImage,
   useDestinationMenu,
   DestinationDescription,
 } from "../components";
@@ -11,8 +11,6 @@ import {
 import BGImageDesktop from "../assets/background-images/destination/bg-image-desktop.webp";
 import BGImageTablet from "../assets/background-images/destination/bg-image-tablet.webp";
 import BGImageMobile from "../assets/background-images/destination/bg-image-mobile.webp";
-
-import Moon from "../assets/destination-pictures/moon.webp";
 
 import styles from "../styles/pagesStyles/Destination.module.scss";
 
@@ -36,7 +34,7 @@ const destination = () => {
       </picture>
       <main className={styles.container}>
         <PageMessage number="01" text="PICK YOUR DESTINATION" />
-        <Image src={Moon} alt="Moon" />
+        <DestinationImage {...{ click }} />
         {render}
         <DestinationDescription {...{ click }} />
       </main>

@@ -1,0 +1,23 @@
+@use "../abstracts/" as *;
+
+.container {
+  position: relative;
+}
+
+.container > * {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: $duration-fast;
+}
+
+@for $i from 1 through 4 {
+  .container[data-click="#{$i}"] > *:nth-child(#{$i}) {
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: $duration-fast;
+  }
+}
