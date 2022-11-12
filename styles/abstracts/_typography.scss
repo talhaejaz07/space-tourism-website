@@ -43,6 +43,11 @@ $body-txt-desktop-font-size: 18px;
 $body-txt-tablet-font-size: 16px;
 $body-txt-mobile-font-size: 15px;
 
+$destination-nav-txt-desktop-font-size: 16px;
+$destination-nav-txt-mobile-font-size: 14px;
+$destination-nav-txt-desktop-letter-spacing: 2.7px;
+$destination-nav-txt-mobile-letter-spacing: 2.36px;
+
 @mixin heading01 {
   color: $light-clr;
   font-family: $primary-font;
@@ -64,6 +69,7 @@ $body-txt-mobile-font-size: 15px;
   font-size: $heading02-desktop-font-size;
   @include for-tablet-and-down {
     font-size: $heading02-tablet-font-size;
+    text-align: center;
   }
   @include for-phone-only {
     font-size: $heading02-mobile-font-size;
@@ -98,8 +104,8 @@ $body-txt-mobile-font-size: 15px;
   opacity: $heading04-opacity;
 }
 
-@mixin heading05 {
-  color: $accent-clr;
+@mixin heading05($text-color) {
+  color: $text-color;
   font-family: $secondary-font;
   font-size: $heading05-desktop-font-size;
   letter-spacing: $heading05-desktop-letter-spacing;
@@ -120,6 +126,9 @@ $body-txt-mobile-font-size: 15px;
   font-family: $primary-font;
   font-size: $subheading01-desktop-font-size;
   font-weight: 400;
+  @include for-tablet-and-down {
+    text-align: center;
+  }
 }
 
 @mixin subheading02 {
@@ -128,6 +137,9 @@ $body-txt-mobile-font-size: 15px;
   font-size: $subheading02-desktop-font-size;
   letter-spacing: $subheading02-desktop-letter-spacing;
   font-weight: 400;
+  @include for-tablet-and-down {
+    text-align: center;
+  }
 }
 
 @mixin nav-txt {
@@ -160,4 +172,17 @@ $body-txt-mobile-font-size: 15px;
   }
   font-weight: 400;
   line-height: 1.75;
+}
+
+@mixin destination-nav-txt {
+  color: $accent-clr;
+  font-family: $secondary-font;
+  font-size: $destination-nav-txt-desktop-font-size;
+  letter-spacing: $destination-nav-txt-desktop-letter-spacing;
+
+  @include for-phone-only {
+    font-size: $destination-nav-txt-mobile-font-size;
+    letter-spacing: $destination-nav-txt-mobile-letter-spacing;
+  }
+  font-weight: 400;
 }

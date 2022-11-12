@@ -1,9 +1,36 @@
+@use "../abstracts/" as *;
+
 .container {
   position: relative;
   z-index: 2;
-  
 
+  height: 100vh;
+  width: min(1400px, 100vw - 32px);
+  margin-inline: auto;
 
+  padding-top: max(23.5vh, 200px);
 
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+}
 
+.container > :nth-child(1) {
+  margin-left: 11.5vw;
+}
+
+.container > :nth-child(2) {
+  grid-row: 2/3;
+  justify-self: end;
+  margin-right: 3.125vw;
+}
+
+.container > :nth-child(3) {
+  margin-left: max(112px, 7.7vw);
+  padding-top: max(12.2vh, 100px);
+}
+
+.container > :nth-child(4) {
+  margin-left: max(112px, 7.7vw);
+  margin-top: 37px;
 }

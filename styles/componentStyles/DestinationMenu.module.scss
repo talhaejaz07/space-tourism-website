@@ -1,0 +1,65 @@
+@use "../abstracts/" as *;
+
+.container {
+  max-width: 300px;
+
+  @include for-phone-only {
+    max-width: 240px;
+  }
+
+  ul {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  @for $i from 1 through 4 {
+    ul[data-click="#{$i}"] {
+      :nth-child(#{$i})::after {
+        opacity: 1;
+        transition-property: opacity;
+        transition-duration: $duration-medium;
+      }
+
+      :nth-child(#{$i}) {
+        p {
+          color: $light-clr;
+        }
+      }
+    }
+  }
+
+  li {
+    list-style: none;
+    position: relative;
+  }
+
+  li::after {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    height: 3px;
+    width: 100%;
+    background-color: $light-clr;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: $duration-medium;
+  }
+
+  li:hover::after {
+    opacity: 0.5;
+    transition-property: opacity;
+    transition-duration: $duration-medium;
+  }
+
+  p {
+    @include destination-nav-txt();
+    padding-bottom: 15px;
+
+    @include for-phone-only {
+      padding-bottom: 11px;
+    }
+
+    cursor: pointer;
+  }
+}

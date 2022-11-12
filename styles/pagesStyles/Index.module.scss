@@ -58,7 +58,7 @@
   }
 
   h5 {
-    @include heading05();
+    @include heading05($accent-clr);
   }
 
   h1 {

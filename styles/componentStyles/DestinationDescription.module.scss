@@ -1,0 +1,104 @@
+@use "../abstracts/" as *;
+
+.container {
+  position: relative;
+  max-width: 445px;
+
+  @include for-tablet-and-down {
+    max-width: 75vw;
+  }
+
+  @include for-phone-only {
+    max-width: 87.2vw;
+  }
+}
+
+.container > div {
+  display: grid;
+  grid-template-columns: 50% 50%;
+
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: $duration-fast;
+}
+
+@for $i from 1 through 4 {
+  .container[data-click="#{$i}"] > div:nth-child(#{$i}) {
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: $duration-fast;
+  }
+}
+
+.heading,
+.text,
+.line {
+  grid-column: 1/3;
+}
+
+.distance,
+.time {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  @include for-phone-only {
+    grid-column: 1/3;
+  }
+}
+
+.distance {
+  @include for-phone-only {
+    margin-bottom: 32px;
+  }
+}
+
+.heading {
+  @include heading02();
+
+  padding-bottom: 14px;
+
+  @include for-tablet-and-down {
+    padding-bottom: 8px;
+  }
+
+  @include for-phone-only {
+    padding-bottom: 1px;
+  }
+}
+
+.text {
+  @include body-txt();
+  height: 180px;
+
+  @include for-tablet-and-down {
+    height: 133px;
+  }
+
+  @include for-phone-only {
+    height: 157px;
+  }
+}
+
+.line {
+  height: 1px;
+  width: 100%;
+  background-color: $light-clr;
+  opacity: 0.5;
+
+  margin-bottom: 28px;
+
+  @include for-phone-only {
+    margin-bottom: 32px;
+  }
+}
+
+.subheading02 {
+  @include subheading02();
+}
+
+.subheading01 {
+  @include subheading01();
+}
