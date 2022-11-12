@@ -4,7 +4,7 @@ import {
   HeadComponent,
   PageMessage,
   DestinationImage,
-  useDestinationMenu,
+  DestinationMenu,
   DestinationDescription,
 } from "../components";
 
@@ -15,7 +15,7 @@ import BGImageMobile from "../assets/background-images/destination/bg-image-mobi
 import styles from "../styles/pagesStyles/Destination.module.scss";
 
 const destination = () => {
-  const { click, render } = useDestinationMenu();
+  const { click, render } = DestinationMenu();
   return (
     <>
       <HeadComponent

@@ -4,7 +4,7 @@ import { DestinationMenuLinks } from "../data";
 
 import styles from "../styles/componentStyles/DestinationMenu.module.scss";
 
-export const useDestinationMenu = () => {
+export const DestinationMenu = () => {
   const [click, setClick] = useState("1");
 
   return {
