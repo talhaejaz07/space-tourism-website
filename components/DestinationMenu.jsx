@@ -5,7 +5,7 @@ import { DestinationMenuLinks } from "../data";
 import styles from "../styles/componentStyles/DestinationMenu.module.scss";
 
 export const DestinationMenu = () => {
-  const [click, setClick] = useState("1");
+  const [click, setClick] = useState("0");
 
   return {
     click,
@@ -15,7 +15,7 @@ export const DestinationMenu = () => {
           {DestinationMenuLinks.map((link, index) => {
             return (
               <li key={link}>
-                <p onClick={() => setClick(index + 1)}>{link}</p>
+                <p onClick={() => setClick(index)}>{link}</p>
               </li>
             );
           })}

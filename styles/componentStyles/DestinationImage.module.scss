@@ -1,23 +1,16 @@
 @use "../abstracts/" as *;
 
-.container {
-  position: relative;
-}
-
 .container > * {
-  position: absolute;
-  top: 0;
-  right: 0;
+  height: 445px;
+  width: 445px;
 
-  opacity: 0;
-  transition-property: opacity;
-  transition-duration: $duration-fast;
-}
+  @include for-tablet-and-down {
+    height: 300px;
+    width: 300px;
+  }
 
-@for $i from 1 through 4 {
-  .container[data-click="#{$i}"] > *:nth-child(#{$i}) {
-    opacity: 1;
-    transition-property: opacity;
-    transition-duration: $duration-fast;
+  @include for-phone-only {
+    height: 170px;
+    width: 170px;
   }
 }

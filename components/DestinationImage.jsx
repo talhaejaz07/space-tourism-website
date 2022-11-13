@@ -9,12 +9,27 @@ import Titan from "../assets/destination-pictures/titan.webp";
 import styles from "../styles/componentStyles/DestinationImage.module.scss";
 
 export const DestinationImage = ({ click }) => {
+  const destination = [
+    {
+      place: Moon,
+      alt: "Moon",
+    },
+    {
+      place: Mars,
+      alt: "Mars",
+    },
+    {
+      place: Europa,
+      alt: "Europa",
+    },
+    {
+      place: Titan,
+      alt: "Titan",
+    },
+  ];
   return (
-    <section className={styles.container} data-click={click}>
-      <Image src={Moon} alt="Moon" />
-      <Image src={Mars} alt="Mars" />
-      <Image src={Europa} alt="Europa" />
-      <Image src={Titan} alt="Titan" />
+    <section className={styles.container}>
+      <Image src={destination[click].place} alt={destination[click].alt} />
     </section>
   );
 };

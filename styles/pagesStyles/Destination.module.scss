@@ -5,24 +5,42 @@
   z-index: 2;
 
   height: 100vh;
-  width: min(1400px, 100vw - 32px);
+  width: min(1400px, 100vw - 77px);
   margin-inline: auto;
 
   padding-top: max(23.5vh, 200px);
 
+  @include for-tablet-and-down {
+    padding-top: 136px;
+  }
+
   display: grid;
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto 1fr;
+
+  @include for-tablet-and-down {
+    grid-template-columns: none;
+    grid-template-rows: auto auto auto 1fr;
+  }
 }
 
 .container > :nth-child(1) {
   margin-left: 11.5vw;
+
+  @include for-tablet-and-down {
+    margin-left: 0;
+    justify-self: left;
+  }
 }
 
 .container > :nth-child(2) {
   grid-row: 2/3;
   justify-self: end;
   margin-right: 3.125vw;
+
+  @include for-tablet-and-down {
+    grid-row: auto;
+  }
 }
 
 .container > :nth-child(3) {

@@ -13,15 +13,15 @@
     justify-content: space-between;
   }
 
-  @for $i from 1 through 4 {
+  @for $i from 0 through 3 {
     ul[data-click="#{$i}"] {
-      :nth-child(#{$i})::after {
+      :nth-child(#{$i + 1})::after {
         opacity: 1;
         transition-property: opacity;
         transition-duration: $duration-medium;
       }
 
-      :nth-child(#{$i}) {
+      :nth-child(#{$i + 1}) {
         p {
           color: $light-clr;
         }

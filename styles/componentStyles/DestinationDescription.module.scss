@@ -1,7 +1,6 @@
 @use "../abstracts/" as *;
 
 .container {
-  position: relative;
   max-width: 445px;
 
   @include for-tablet-and-down {
@@ -16,20 +15,6 @@
 .container > div {
   display: grid;
   grid-template-columns: 50% 50%;
-
-  position: absolute;
-  top: 0;
-  opacity: 0;
-  transition-property: opacity;
-  transition-duration: $duration-fast;
-}
-
-@for $i from 1 through 4 {
-  .container[data-click="#{$i}"] > div:nth-child(#{$i}) {
-    opacity: 1;
-    transition-property: opacity;
-    transition-duration: $duration-fast;
-  }
 }
 
 .heading,
