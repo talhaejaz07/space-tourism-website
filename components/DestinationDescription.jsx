@@ -7,8 +7,10 @@ import styles from "../styles/componentStyles/DestinationDescription.module.scss
 export const DestinationDescription = ({ click }) => {
   return (
     <section className={styles.container}>
-      <div key={DestinationText[click].place}>
-        <h2 className={styles.heading}>{DestinationText[click].place}</h2>
+      <div>
+        <h2 style={{ styleAnimation }} className={styles.heading}>
+          {DestinationText[click].place}
+        </h2>
         <p className={styles.text}>{DestinationText[click].description}</p>
         <div className={styles.line} />
         <div className={styles.distance}>
