@@ -8,9 +8,7 @@ export const DestinationDescription = ({ click }) => {
   return (
     <section className={styles.container}>
       <div>
-        <h2 style={{ styleAnimation }} className={styles.heading}>
-          {DestinationText[click].place}
-        </h2>
+        <h2 className={styles.heading}>{DestinationText[click].place}</h2>
         <p className={styles.text}>{DestinationText[click].description}</p>
         <div className={styles.line} />
         <div className={styles.distance}>

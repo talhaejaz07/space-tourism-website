@@ -6,10 +6,18 @@
   height: 100vh;
   width: 100vw;
 
+  @include for-small-screens-and-down {
+    scale: 0.8;
+  }
+
+  @include for-tablet-and-down {
+    scale: 1;
+  }
+
   display: grid;
   grid-template-columns: 50% 50%;
 
-  @media (max-width: 1075px) {
+  @include for-tablet-and-down {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -21,12 +29,6 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-
-    @media (max-width: 1075px) {
-      height: auto;
-      justify-content: center;
-      margin-top: 140px;
-    }
 
     @include for-tablet-and-down {
       margin-top: max(20vh, 140px);
@@ -49,12 +51,6 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
-
-    @media (max-width: 1075px) {
-      margin-right: 0;
-      margin-bottom: 0;
-      gap: 0;
-    }
   }
 
   h5 {
@@ -73,11 +69,6 @@
     display: flex;
     align-items: flex-end;
 
-    @media (max-width: 1075px) {
-      display: block;
-      margin-top: 32px;
-    }
-
     @include for-tablet-and-down {
       margin-top: max(12.5vh, 32px);
     }
@@ -86,11 +77,6 @@
   a {
     margin-left: 19.5%;
     margin-bottom: 14.5%;
-
-    @media (max-width: 1075px) {
-      margin-left: 0;
-      margin-bottom: 0;
-    }
   }
 
   button {
